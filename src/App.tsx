@@ -37,15 +37,6 @@ function App() {
 
     const transactions = useSelector((state: RootState) => state.ledger.transactions);
 
-    const onDepositClicked = () => {
-        dispatch(incrementByAmount({value: 22, date: "01/01/01"}))
-        // alert(`Deposit - This is an alert from ${transactionAmount} the Child Component`)
-    }
-
-    const onWithdrawalClicked = () => {
-        // alert(`Withdrawal - This is an alert from ${transactionAmount} the Child Component`)
-    }
-
     return (
         <div className="App">
 
@@ -63,19 +54,10 @@ function App() {
                     ornare arcu quis sem semper congue.
                 </GeneralDescription>
 
-                <p
-                    onClick={() => dispatch(incrementByAmount({
-                        value: 22,
-                        date: "01/01/01"
-                    }))}
-                >Click Me<br/><br/></p>
-
                 <div className="grid grid-cols-2 gap-4">
                     <TransactionDateEntry
                         date={transactionDate}
                         value={transactionAmount}
-                        onDepositClicked = {onDepositClicked}
-                        onWithdrawalClicked = {onWithdrawalClicked}
                     />
 
                     { (aboveHappyLimit) &&

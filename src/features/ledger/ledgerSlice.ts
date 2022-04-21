@@ -3,7 +3,7 @@ import {RootState} from '../../app/store';
 import {toast} from "react-toastify";
 
 export interface LedgerTransactionsState {
-    date: string;
+    date: Date;
     value: number;
     status: 'c' | 'd';
 }
@@ -24,7 +24,7 @@ const initialState: LedgerState = {
 
 export interface TransactionPayload {
     value: number;
-    date: string;
+    date: Date;
 }
 
 export const ledgerSlice = createSlice({

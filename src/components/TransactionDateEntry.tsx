@@ -2,14 +2,12 @@ import * as React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import {useState} from "react";
-import {incrementByAmount} from "../features/ledger/ledgerSlice";
+import {decrementByAmount, incrementByAmount} from "../features/ledger/ledgerSlice";
 import {useAppDispatch} from "../app/hooks";
 
 type Props = {
     date: Date,
-    value: string,
-    onDepositClicked: () => void,
-    onWithdrawalClicked: () => void,
+    value: string
 };
 
 export const TransactionDateEntry = (props: Props) => {
@@ -18,6 +16,14 @@ export const TransactionDateEntry = (props: Props) => {
 
     const [startDate, setStartDate] = useState(new Date(props.date));
     const [amount, setAmount] = useState(props.value);
+
+    const onDepositClicked = () => {
+        dispatch(incrementByAmount({value: parseFloat(amount), date: startDate}))
+    }
+
+    const onWithdrawalClicked = () => {
+        dispatch(decrementByAmount({value: parseFloat(amount), date: startDate}))
+    }
 
     return (
             <div className="card w-full max-w-sm shadow-2xl bg-base-100 show-overflow h-full">
@@ -40,12 +46,12 @@ export const TransactionDateEntry = (props: Props) => {
                     <div className="grid grid-cols-2 gap-4">
                         <div className="form-control mt-6">
                             <button className="btn btn-primary"
-                                    onClick={props.onDepositClicked}
+                                    onClick={onDepositClicked}
                             >Deposit</button>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn"
-                                    onClick={props.onWithdrawalClicked}
+                                    onClick={onWithdrawalClicked}
                             >Withdrawal</button>
                         </div>
                     </div>
