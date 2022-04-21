@@ -25,10 +25,13 @@ h4 {
 }
 
 .center {
-  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
   white-space: pre-line;
-  color: #EF9995;
+  color: #d2c59D;
   position: absolute;
   margin: auto;
   padding: 50px 70px;
+}
+
+.glow {
+  text-shadow: rgba(0,0,0,.9) 2px 2px 12px;
 }

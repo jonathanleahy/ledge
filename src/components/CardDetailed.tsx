@@ -19,7 +19,7 @@ export const CardDetailed = (props: Props) => {
                     <>
                         <figure>
                             <img src={props.image} alt={props.imageText}/>
-                            <div className="stat-value center">{props.imageText}</div>
+                            <div className="stat-value center glow">{props.imageText}</div>
                         </figure>
                     </>
                 }

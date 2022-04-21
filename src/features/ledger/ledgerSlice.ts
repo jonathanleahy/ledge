@@ -16,9 +16,9 @@ export interface LedgerState {
 }
 
 const initialState: LedgerState = {
-    startingBalance: 2000,
+    startingBalance: 100,
     overdraftLimit: 250,
-    happyLimit: 100,
+    happyLimit: 150,
     transactions: [],
 };
 

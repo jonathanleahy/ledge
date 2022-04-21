@@ -10,7 +10,7 @@ import {StatusStatsBar} from "./components/StatusStatsBar";
 import {GeneralDescription} from "./components/GeneralDescription";
 import {useAppDispatch, useAppSelector} from "./app/hooks";
 import {
-    decrementByAmount,
+    decrementByAmount, incrementByAmount,
     selectAboveHappyValue,
     selectHappyLimit,
     selectLatestBalance,
@@ -49,18 +49,18 @@ function App() {
                         subtitle={"ᵒᴼ▫ₒ▫ᴼᵒ▫∙ BaLAncINg YoUR CAsh SiNce 1992 ∙▫ᵒᴼ▫ₒ▫ᴼᵒ"}
                 />
 
-                <p
-                    onClick={() => dispatch(decrementByAmount({
-                        value: 22,
-                        date: "01/01/01"
-                    }))}
-                    >Click Me</p>
-
                 <GeneralDescription>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mollis diam id odio tempor, eu
                     rutrum ante volutpat. Nulla sed enim scelerisque, gravida nisl quis, imperdiet arcu. Morbi
                     ornare arcu quis sem semper congue.
                 </GeneralDescription>
+
+                <p
+                    onClick={() => dispatch(incrementByAmount({
+                        value: 22,
+                        date: "01/01/01"
+                    }))}
+                >Click Me<br/><br/></p>
 
                 <div className="grid grid-cols-2 gap-4">
                     <TransactionDateEntry/>
@@ -69,7 +69,7 @@ function App() {
                         <CardDetailed title="Current Balance"
                                       value={`£${currentBalance}`}
                                       desc="Jan 1st"
-                                      image="summer-sun.jpg"
+                                      image="summer-sun-1.jpg"
                                       imageText="You're Exceeding Your Happy Savings Goal"
                                       isIconInfo
                         />
