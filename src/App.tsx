@@ -19,7 +19,6 @@ import {
 } from "./features/ledger/ledgerSlice";
 import {useSelector} from "react-redux";
 import {RootState} from "./app/store";
-import TransactionsGridRow from "./components/transactions-grid-row";
 
 function App() {
 
@@ -31,12 +30,21 @@ function App() {
     const happyLimit = useAppSelector(selectHappyLimit);
     const aboveHappyLimit = useAppSelector(selectAboveHappyValue);
 
-    const [transactionAmount, setTransactionAmount] = useState('22');
-    const [dateOfTransaction, setDateOfTransaction] = useState('01/02/2022');
+    const [transactionAmount, setTransactionAmount] = useState('35');
+    const [transactionDate, setTransactionDate] = useState(new Date());
 
     const transactionValue = Number(transactionAmount) || 0;
 
     const transactions = useSelector((state: RootState) => state.ledger.transactions);
+
+    const onDepositClicked = () => {
+        dispatch(incrementByAmount({value: 22, date: "01/01/01"}))
+        // alert(`Deposit - This is an alert from ${transactionAmount} the Child Component`)
+    }
+
+    const onWithdrawalClicked = () => {
+        // alert(`Withdrawal - This is an alert from ${transactionAmount} the Child Component`)
+    }
 
     return (
         <div className="App">
@@ -63,7 +71,12 @@ function App() {
                 >Click Me<br/><br/></p>
 
                 <div className="grid grid-cols-2 gap-4">
-                    <TransactionDateEntry/>
+                    <TransactionDateEntry
+                        date={transactionDate}
+                        value={transactionAmount}
+                        onDepositClicked = {onDepositClicked}
+                        onWithdrawalClicked = {onWithdrawalClicked}
+                    />
 
                     { (aboveHappyLimit) &&
                         <CardDetailed title="Current Balance"
