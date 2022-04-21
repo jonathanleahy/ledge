@@ -7,7 +7,7 @@ type Props = {
 
 };
 
-export const DataEntry = (props: Props) => {
+export const TransactionDateEntry = (props: Props) => {
 
     const [startDate, setStartDate] = useState(new Date());
 

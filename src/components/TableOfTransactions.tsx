@@ -4,7 +4,7 @@ type Props = {
 
 };
 
-export const Table = (props: Props) => {
+export const TableOfTransactions = (props: Props) => {
     return (
         <div className="overflow-x-auto">
             <table className="table w-full prose-xl">
