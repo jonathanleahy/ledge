@@ -6,10 +6,13 @@ type Props = {
 
 export const GeneralDescription = (props: Props) => {
     return (
-        <article className="prose lg:prose-xl">
-            <p>
-                {props.children}
-            </p>
-        </article>
+        <>
+            <article className="prose lg:prose-xl">
+                <p>
+                    {props.children}
+                </p>
+            </article>
+            <br/>
+        </>
     );
 };

@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-float infinite 3s ease-in-out;
-  }
-}
-
 .Body-centered {
   min-height: 100vh;
   display: flex;
@@ -23,25 +17,18 @@
   overflow-x: visible;
 }
 
-.App-link {
-  color: rgb(112, 76, 182);
-}
-
-@keyframes App-logo-float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
 h4 {
   color: red;
   position: relative;
   transform: rotate(.2deg);
   filter: drop-shadow(4px 4px 1px yellow);
+}
+
+.center {
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
+  white-space: pre-line;
+  color: #EF9995;
+  position: absolute;
+  margin: auto;
+  padding: 50px 70px;
 }

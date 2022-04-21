@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react';
 
 type Props = {
@@ -9,16 +8,19 @@ type Props = {
 
 export const Header = (props: Props) => {
     return (
-        <div>
-            <article className="prose lg:prose-xl">
+        <>
+            <div>
+                <article className="prose lg:prose-xl">
 
-                { props.title &&
-                <h1>{props.title}!</h1>}
+                    {props.title &&
+                        <h1>{props.title}!</h1>}
 
-                { props.subtitle &&
-                    <h4>{props.subtitle}!</h4>}
+                    {props.subtitle &&
+                        <h4>{props.subtitle}!</h4>}
 
-            </article>
-        </div>
+                </article>
+            </div>
+            <br/>
+        </>
     );
 };
