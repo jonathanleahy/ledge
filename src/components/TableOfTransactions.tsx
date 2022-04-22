@@ -7,12 +7,6 @@ type Props = {
 
 export const TableOfTransactions = (props: Props) => {
 
-    const sortedTransactions: LedgerTransactionsState[] = props.transactions.sort(function(a, b) {
-        let c = new Date(a.date).getTime();
-        let d = new Date(b.date).getTime();
-        return c > d ? 1 : -1;
-    });
-
     return (
         <>
             <div className="overflow-x-auto">
@@ -40,7 +34,7 @@ export const TableOfTransactions = (props: Props) => {
 
                     {props.transactions.length > 0 &&
                         <>
-                            {sortedTransactions.map((trans: LedgerTransactionsState, index) => (
+                            {props.transactions.map((trans: LedgerTransactionsState, index) => (
                                 <tr>
                                     <th>{++index}</th>
                                     <td>{trans.date.toLocaleDateString()}</td>

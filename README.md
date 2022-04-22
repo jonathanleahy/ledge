@@ -1,3 +1,19 @@
+## Up and running
+
+```npm install```
+
+```npm run start```
+
+Outstanding:
+
+- Notification when insufficient funds available
+- Sorting by date of transactions
+- Input validation, such as - and weird cases
+- tests
+
+
+## Other Notes
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
