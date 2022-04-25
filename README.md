@@ -34,6 +34,10 @@ decide on presentation, methodology and structure.
     there are install steps, document these in a README so that we can give it a try.
     Thanks!
 
+## Github Build
+
+https://github.com/tschaub/gh-pages
+
 ## Up and running
 
 ```npm install```
