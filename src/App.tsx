@@ -19,6 +19,8 @@ import {
 } from "./features/ledger/ledgerSlice";
 import {useSelector} from "react-redux";
 import {RootState} from "./app/store";
+import {Button, Modal} from 'react-daisyui';
+import {hideErrorModal, selectIsVisibleError, showErrorModal} from "./features/error-modal/errorModalSlice";
 
 function App() {
 
@@ -30,15 +32,32 @@ function App() {
     const happyLimit = useAppSelector(selectHappyLimit);
     const aboveHappyLimit = useAppSelector(selectAboveHappyValue);
 
-    const [transactionAmount, setTransactionAmount] = useState('35');
+    const [transactionAmount, setTransactionAmount] = useState('22');
     const [transactionDate, setTransactionDate] = useState(new Date());
 
     const transactionValue = Number(transactionAmount) || 0;
 
     const transactions = useSelector((state: RootState) => state.ledger.transactions);
 
+    const visible = useAppSelector(selectIsVisibleError);
+
+    const hideVisible = () => {
+        // setVisible(!visible)
+        dispatch(hideErrorModal({value: 22}))
+    }
+
     return (
         <div className="App">
+
+            <Modal open={visible}>
+                <p >
+                    <h3 className="font-bold text-lg">Withdrawal Cancelled</h3>
+                    <p className="py-4">You have insufficient funds in your account to make this withdrawal.</p>
+                    <div className="modal-action">
+                        <Button onClick={() => hideVisible()}>OKAY</Button>
+                    </div>
+                </p>
+            </Modal>
 
             <NavBar/>
 

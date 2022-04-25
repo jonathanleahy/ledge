@@ -1,3 +1,40 @@
+# Tech. Test
+
+You’re free to use any tools you require, including 3rd party libraries to help you along the way. We’re
+more than happy for you to use a boilerplate framework as a starting point, or to start from
+scratch if that’s your thing!
+
+Think of it as an MVP: if there are any limitations you hit or improvements you think you
+could make, write them down somewhere to discuss with us later.
+
+Here are the technical details:
+
+We would like you to build a very simple account ledger showing your current balance,
+debits (withdrawals) and credits (deposits), with the ability to pay money in and out on any
+selected date while keeping within some predefined account limits.
+
+The requirements and further details are written from the user perspective, so you can
+decide on presentation, methodology and structure.
+
+* As a user I have a bank account with a starting balance of £2,000
+* As a user I have an agreed overdraft of £250 that cannot be exceeded
+* As a user I want to see a list of deposits and withdrawals into and out of my account,
+   ordered by date (most recent first)
+* As a user I want to log money deposits into my account, storing the date and amount
+   credited
+* As a user I want to log money withdrawals from my account, storing the date and
+   amount debited
+* As a user I want to see an up-to-date balance for my account
+* As a user I want to know when I have entered my agreed overdraft
+* As a user I want to know when I have more than £4,000 in my account so that I can
+   make relevant spending and saving choices
+* As a user I want to see the limits I have in place on my account
+* As a user I am obsessed with the 90s and want a retro feel to my account ledger
+    Once you’re done, please provide us with a link to a git repository containing your code. If
+    there are install steps, document these in a README so that we can give it a try.
+    Thanks!
+    Team LOQBOX
+
 ## Up and running
 
 ```npm install```

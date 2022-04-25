@@ -38,10 +38,10 @@ export const ledgerSlice = createSlice({
         decrementByAmount: (state, action: PayloadAction<TransactionPayload>) => {
             let a: LedgerTransactionsState = {date: action.payload.date, value: action.payload.value, status: 'd'};
             let balance = state.startingBalance + sumOfTransactions(state.transactions)
-            if (balance - action.payload.value < -state.overdraftLimit) {
-                toast.error(`You don't have enough in your account to make that withdrawal.`);
-            } else {
+            if (balance - action.payload.value > -state.overdraftLimit) {
                 state.transactions.push(a)
+            } else {
+                toast.error(`You don't have enough in your account to make that withdrawal.`);
             }
         },
     },

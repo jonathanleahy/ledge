@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import {useState} from "react";
 import {decrementByAmount, incrementByAmount} from "../features/ledger/ledgerSlice";
 import {useAppDispatch} from "../app/hooks";
+import {hideErrorModal, showErrorModal} from "../features/error-modal/errorModalSlice";
 
 type Props = {
     date: Date,
@@ -17,12 +18,14 @@ export const TransactionDateEntry = (props: Props) => {
     const [startDate, setStartDate] = useState(new Date(props.date));
     const [amount, setAmount] = useState(props.value);
 
-    const onDepositClicked = () => {
-        dispatch(incrementByAmount({value: parseFloat(amount), date: startDate}))
+    const onDepositClicked = async () => {
+        await dispatch(incrementByAmount({value: parseFloat(amount), date: startDate}))
     }
 
-    const onWithdrawalClicked = () => {
-        dispatch(decrementByAmount({value: parseFloat(amount), date: startDate}))
+    const onWithdrawalClicked = async () => {
+        await dispatch(decrementByAmount({value: parseFloat(amount), date: startDate}))
+        // const response = await dispatch(hideErrorModal({value: 22}))
+        // dispatch(showErrorModal({value: 22}))
     }
 
     return (
