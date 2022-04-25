@@ -1,5 +1,7 @@
 # Tech. Test
 
+## See the live Site: https://jonathanleahy.github.io/ledge/
+
 You’re free to use any tools you require, including 3rd party libraries to help you along the way. We’re
 more than happy for you to use a boilerplate framework as a starting point, or to start from
 scratch if that’s your thing!
@@ -37,6 +39,8 @@ decide on presentation, methodology and structure.
 ## Github Build
 
 https://github.com/tschaub/gh-pages
+
+Installation Instructions: https://github.com/gitname/react-gh-pages
 
 ## Up and running
 
