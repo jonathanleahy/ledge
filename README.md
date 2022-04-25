@@ -33,7 +33,6 @@ decide on presentation, methodology and structure.
     Once you’re done, please provide us with a link to a git repository containing your code. If
     there are install steps, document these in a README so that we can give it a try.
     Thanks!
-    Team LOQBOX
 
 ## Up and running
 
