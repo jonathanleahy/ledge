@@ -37,11 +37,15 @@ decide on presentation, methodology and structure.
     there are install steps, document these in a README so that we can give it a try.
     Thanks!
 
-## Github Build
+## Outstanding
 
-https://github.com/tschaub/gh-pages
+- DOM console issue, `Warning: ReactDOM.render is no longer supported in React 18`
+- DOM console issue, `Warning: validateDOMNesting(...): <p> cannot appear as a descendant of <p>`
 
-Installation Instructions: https://github.com/gitname/react-gh-pages
+- Notification when insufficient funds available
+- Sorting by date of transactions
+- Input validation, Formik
+- Tests
 
 ## Up and running
 
@@ -49,12 +53,11 @@ Installation Instructions: https://github.com/gitname/react-gh-pages
 
 ```npm run start```
 
-Outstanding:
+## Github Build
 
-- Notification when insufficient funds available
-- Sorting by date of transactions
-- Input validation, such as - and weird cases
-- tests
+https://github.com/tschaub/gh-pages
+
+Installation Instructions: https://github.com/gitname/react-gh-pages
 
 
 ## Other Notes
